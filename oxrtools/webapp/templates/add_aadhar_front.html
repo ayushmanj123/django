@@ -1,9 +1,7 @@
 {% extends 'index.html' %}
 
 {% block content %}
-<br/><br>
-<h1>Upload Aadhar Front Side</h1>
-<br/><br>
+
 {% if submitted %}
 
 Your form is submitted!!
@@ -11,11 +9,26 @@ Your form is submitted!!
 {% else %}
 
 <form enctype="multipart/form-data" action="" method="POST">
-    
-    {% csrf_token %}
-    {{ form.as_p }}
-    <br/><br>
-    <input type="submit" value="Submit" class="btn btn-secondary">
+
+<div class="container text-center">
+    <div class="row">
+      <div class="col">
+        <br/><br>
+            <h1>Upload Aadhar Front Side</h1>
+            <br/><br>
+        {% csrf_token %}
+        {{ form.as_p }}
+      </div>
+      <div class="col">
+        <br/><br>
+            <h1>Upload Aadhar Back Side</h1>
+            <br/><br>
+        {% csrf_token %}
+        {{ form.as_p }}
+      </div>
+    </div>
+  </div>
+
 
 </form>
 

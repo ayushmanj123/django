@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Aadhar_Front
+from .models import Aadhar_Front, Aadhar_Back
 from .forms import AadharFront, AadharBack
 from django.http import HttpResponseRedirect
 # Create your views here.
@@ -10,7 +10,7 @@ def home(request):
     return render(request, 'home.html')
 
 def get_files(request):
-    aadharfront = Aadhar_Front.objects.get()
+    aadharfront = Aadhar_Front.objects.get(pk=15)
     return render(request, 'show.html',{
         'aadharfront':aadharfront,
     })
